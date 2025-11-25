@@ -1,10 +1,43 @@
-# H*: Humanoid Visual Search in the Wild
+# *Thinking in 360°*: Humanoid Visual Search in the Wild
 
+<div class="button-container" >
+                        <a href="https://arxiv.org/" class="button">
+                            <span class="icon is-small">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            <span>arXiv</span>
+                        </a>
+                        <a href="https://humanoid-vstar.github.io" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Page</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/humanoid-vstar/hvs-models" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
+                            </span>
+                            <span>Models</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
+                            </span>
+                            <span>Data</span>
+                        </a>
+                        <a href="https://huggingface.co/datasets/humanoid-vstar/hstar_bench/tree/main" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
+                            </span>
+                            <span>Benchmark</span>
+                        </a>
+                    </div>
+                    
 ## Getting Started
 
 ### Installation
 
-Set up the [VAGEN](https://github.com/mll-lab-nu/VAGEN.git) environment for training.
+Set up the [VAGEN](https://github.com/mll-lab-nu/VAGEN) environment for training.
 
 ```bash
 conda create -n vagen python=3.10
@@ -27,10 +60,10 @@ cd .. && pip install -e .
 In addition, if you want to train the model from scratch, you need to install [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory.git) for SFT training.
 ## Training
 ### SFT
-Use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory.git) and our SFT dataset [HVS-mixed-sft-2k]() to train or directly download our fine-tuned model [HVS-3B-mixed-sft]().
+Use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory.git) and our SFT dataset [hos_sft and hps_sft](https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets) to train or directly download our fine-tuned model [HVS-3B-sft-only](https://huggingface.co/humanoid-vstar/HVS-3B-sft-only).
 
 ### RL
-* Download our RL dataset [HVS-mixed-rl-3k]()
+* Download our RL dataset [hvs_rl](https://huggingface.co/datasets/humanoid-vstar/hvs_rl) (use mixed_rl.zip if you want to trained on the mixed dataset)
 * Change your downloaded dataset path in the [training config](scripts/examples/masked_grpo/hstar/free_think/env_config.yaml).
   ```yaml
   env1:
@@ -65,7 +98,7 @@ Use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory.git) and our SFT da
   ```
 
 ## Benchmarking
-* Download our [hstar_bench]() dataset.
+* Download our [hstar_bench](https://huggingface.co/datasets/humanoid-vstar/hstar_bench) dataset.
 * Change your downloaded dataset path (2 task splits) in the [`scripts/examples/masked_grpo/hstar/free_think/hos_val_config.yaml`](scripts/examples/masked_grpo/hstar/free_think/hos_val_config.yaml) and [`scripts/examples/masked_grpo/hstar/free_think/hos_val_config.yaml`](scripts/examples/masked_grpo/hstar/free_think/hos_val_config.yaml).
   ```yaml
   env1:
