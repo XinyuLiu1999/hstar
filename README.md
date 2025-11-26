@@ -1,23 +1,7 @@
 # *Thinking in 360°*: Humanoid Visual Search in the Wild
-![teaser](assets/teaserv4.png)
-<a href="https://arxiv.org/abs/2511.20351" target="_blank">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2511.20351-b31b1b.svg?logo=arxiv" height="25" />
-</a>
-<a href="https://humanoid-vstar.github.io/" target="_blank">
-    <img alt="Website" src="https://img.shields.io/badge/🌎_Website-humanoid--vstar.github.io-blue" height="25" />
-</a>
-<a href="https://huggingface.co/collections/humanoid-vstar/hvs-models" target="_blank">
-    <img alt="HF Model: HVS-3B" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Model-HVS--3B-ffc107?color=ffc107&logoColor=white" height="25" />
-</a>
-<a href="https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets" target="_blank">
-    <img alt="HF Dataset: hvs-train-datasets" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Data-hvs--train--datasets-ffc107?color=ffc107&logoColor=white" height="25" />
-</a>
-<a href="https://huggingface.co/datasets/humanoid-vstar/hstar_bench" target="_blank">
-    <img alt="HF Dataset: hstar_benchmark" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Benchmark-hstar__bench-ffc107?color=ffc107&logoColor=white" height="25" />
-</a>
 
-<div class="byline">
-    <div class="byline-container">
+<div class="byline" align="center">
+    <div class="byline-container" align="center">
         <div class="authors" style="text-align: center; margin-bottom: 1rem;">
             <div style="margin-bottom: 0.5rem;">
                 <a href="https://scholar.google.com/citations?user=GVI6jVsAAAAJ&hl=en" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Heyang Yu</span></a><sup>1*</sup>,
@@ -46,6 +30,24 @@
         </div>
     </div>
 </div>
+
+<a href="https://arxiv.org/abs/2511.20351" target="_blank">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2511.20351-b31b1b.svg?logo=arxiv" height="25" />
+</a>
+<a href="https://humanoid-vstar.github.io/" target="_blank">
+    <img alt="Website" src="https://img.shields.io/badge/🌎_Website-humanoid--vstar.github.io-blue" height="25" />
+</a>
+<a href="https://huggingface.co/collections/humanoid-vstar/hvs-models" target="_blank">
+    <img alt="HF Model: HVS-3B" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Model-HVS--3B-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+<a href="https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets" target="_blank">
+    <img alt="HF Dataset: hvs-train-datasets" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Data-hvs--train--datasets-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+<a href="https://huggingface.co/datasets/humanoid-vstar/hstar_bench" target="_blank">
+    <img alt="HF Dataset: hstar_benchmark" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Benchmark-hstar__bench-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+
+![teaser](assets/teaserv4.png)
 
 ## News
 * [2025/11/26] Our [paper](https://arxiv.org/abs/2511.20351) is available on arXiv.
