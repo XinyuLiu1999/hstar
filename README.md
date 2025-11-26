@@ -1,6 +1,58 @@
 # *Thinking in 360°*: Humanoid Visual Search in the Wild
 ![teaser](assets/teaserv4.png)
-[Paper](https://arxiv.org/abs/2511.20351) | [Page](https://humanoid-vstar.github.io/) | [Model](https://huggingface.co/collections/humanoid-vstar/hvs-models) | [Dataset](https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets) | [Benchmark](https://huggingface.co/datasets/humanoid-vstar/hstar_bench)
+<a href="https://arxiv.org/abs/2511.20351" target="_blank">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2511.20351-b31b1b.svg?logo=arxiv" height="25" />
+</a>
+<a href="https://humanoid-vstar.github.io/" target="_blank">
+    <img alt="Website" src="https://img.shields.io/badge/🌎_Website-humanoid--vstar.github.io-blue" height="25" />
+</a>
+<a href="https://huggingface.co/collections/humanoid-vstar/hvs-models" target="_blank">
+    <img alt="HF Model: HVS-3B" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Model-HVS--3B-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+<a href="https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets" target="_blank">
+    <img alt="HF Dataset: hvs-train-datasets" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Data-hvs--train--datasets-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+<a href="https://huggingface.co/datasets/humanoid-vstar/hstar_bench" target="_blank">
+    <img alt="HF Dataset: hstar_benchmark" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Benchmark-hstar__bench-ffc107?color=ffc107&logoColor=white" height="25" />
+</a>
+
+<div class="byline">
+    <div class="byline-container">
+        <div class="authors" style="text-align: center; margin-bottom: 1rem;">
+            <div style="margin-bottom: 0.5rem;">
+                <a href="https://scholar.google.com/citations?user=GVI6jVsAAAAJ&hl=en" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Heyang Yu</span></a><sup>1*</sup>,
+                <span class="author-name">Yinan Han</span><sup>3*</sup>,
+                <a href="https://painkillerzzz.github.io/xiangyu_zhang.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Xiangyu Zhang</span></a><sup>4</sup>,
+                <a href="https://yyyybq.github.io/BaiqiaoYIN.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Baiqiao Yin</span></a><sup>1</sup>,
+                <span class="author-name">Bowen Chang</span><sup>1</sup>,
+                <a href="https://han-xiangyu.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Xiangyu Han</span></a><sup>1</sup>,
+                <span class="author-name">Xinhao Liu</span><sup>1</sup>,
+                <a href="https://jingz6676.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Jing Zhang</span></a><sup>1</sup>
+            </div>
+            <div>
+                <a href="https://web.stanford.edu/~pavone/index.html" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name"><span class="author-name">Marco Pavone</span></a><sup>2,5</sup>,
+                <a href="https://ai4ce.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Chen Feng</span></a><sup>1&dagger;</sup>,
+                <a href="https://www.sainingxie.com/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name">Saining Xie</span></a><sup>1&dagger;</sup>,
+                <a href="https://yimingli-page.github.io/" target="_blank" style="color: inherit; text-decoration: none !important;"><span class="author-name"><span class="author-name">Yiming Li</span></a><sup>1,2&dagger;</sup>
+            </div>
+        </div>
+        <div style="text-align: center; font-size: 1.1rem; color: #666;"><span><sup>*</sup>Equal contribution</span> &nbsp; <span><sup>&dagger;</sup>Corresponding author</span></div>
+        <div class="affiliations" style="text-align: center; font-size: 1.1rem; color: #666;">
+            <span><sup>1</sup>New York University</span> &nbsp;
+            <span><sup>2</sup>NVIDIA</span> &nbsp;
+            <span><sup>3</sup>TU Darmstadt</span> &nbsp;
+            <span><sup>4</sup>UC Berkeley</span> &nbsp;
+            <span><sup>5</sup>Stanford University</span>
+        </div>
+    </div>
+</div>
+
+## News
+* [2025/11/26] Our [paper](https://arxiv.org/abs/2511.20351) is available on arXiv.
+* [2025/11/26] We release our finetuend HVS-3B model on HuggingFace.
+* [2025/11/26] We release our training datasets on HuggingFace.
+* [2025/11/26] We release our benchmarking dataset on HuggingFace.
+
 ## Getting Started
 
 ### Installation
