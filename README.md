@@ -1,38 +1,6 @@
 # *Thinking in 360°*: Humanoid Visual Search in the Wild
 
-<div class="button-container" >
-                        <a href="https://arxiv.org/" class="button">
-                            <span class="icon is-small">
-                                <i class="ai ai-arxiv"></i>
-                            </span>
-                            <span>arXiv</span>
-                        </a>
-                        <a href="https://humanoid-vstar.github.io" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-github"></i>
-                            </span>
-                            <span>Page</span>
-                        </a>
-                        <a href="https://huggingface.co/collections/humanoid-vstar/hvs-models" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
-                            <span>Models</span>
-                        </a>
-                        <a href="https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
-                            <span>Data</span>
-                        </a>
-                        <a href="https://huggingface.co/datasets/humanoid-vstar/hstar_bench/tree/main" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
-                            <span>Benchmark</span>
-                        </a>
-                    </div>
-                    
+[Paper](https://arxiv.org/abs/2511.20351) | [Page](https://humanoid-vstar.github.io/) | [Model](https://huggingface.co/collections/humanoid-vstar/hvs-models) | [Dataset](https://huggingface.co/collections/humanoid-vstar/hvs-train-datasets) | [Benchmark](https://huggingface.co/datasets/humanoid-vstar/hstar_bench)
 ## Getting Started
 
 ### Installation
