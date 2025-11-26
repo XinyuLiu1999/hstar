@@ -183,7 +183,7 @@ Use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory.git) and our SFT da
 ## Citation
 ```bibtex
 @misc{yu2025thinking360deghumanoidvisual,
-      title={Thinking in 360{\deg}: Humanoid Visual Search in the Wild}, 
+      title={Thinking in 360°: Humanoid Visual Search in the Wild}, 
       author={Heyang Yu and Yinan Han and Xiangyu Zhang and Baiqiao Yin and Bowen Chang and Xiangyu Han and Xinhao Liu and Jing Zhang and Marco Pavone and Chen Feng and Saining Xie and Yiming Li},
       year={2025},
       eprint={2511.20351},
