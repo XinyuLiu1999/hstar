@@ -21,7 +21,7 @@ data
 sft/output/*
 sft/data/*
 sft_configs/
-models/
+./models/
 
 # Distribution / packaging
 .Python
@@ -118,7 +118,7 @@ tests/e2e/toy_examples/deepspeed/synchronous/output.txt
 # vim
 *.swp
 
-log*
+logs/
 
 **logs
 
