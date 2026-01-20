@@ -4,7 +4,7 @@ env1:
         render_mode: vision
         prompt_format: free_think
         use_state_reward: false
-        data_path: /path/to/your/hos/dataset/split
+        data_path: /root/GP/hstar/datasets/hos_bench
         resolution: 1080
     train_size: 2400 
     test_size: 2400

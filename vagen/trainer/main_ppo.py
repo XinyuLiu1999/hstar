@@ -49,6 +49,7 @@ def main_task(config, compute_score=None):
     # instantiate tokenizer
     from verl.utils import hf_tokenizer, hf_processor
     tokenizer = hf_tokenizer(local_path)
+    tokenizer.padding_side = "left"
     processor = hf_processor(local_path, use_fast=True)  # used for multimodal LLM, could be none
 
     # define worker classes

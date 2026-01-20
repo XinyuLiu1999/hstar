@@ -1,9 +1,16 @@
 models:
-        gemma_3_4b_it:
-                provider: "openai" # DO NOT CHANGE
-                model_name: "google/gemma-3-4b-it"
+        # gemma_3_4b_it:
+        #         provider: "openai" # DO NOT CHANGE
+        #         model_name: "google/gemma-3-4b-it"
+
+        #         api_key: ""
+        #         base_url: "http://127.0.0.1:8000/v1"
+        #         temperature: 0
+        hstar_vl_actor:
+                provider: "openai"          # 不改
+                model_name: "/root/GP/hstar/models/HVS-3B-sft-only"
 
                 api_key: ""
                 base_url: "http://127.0.0.1:8000/v1"
-                temperature: 0
 
+                temperature: 0

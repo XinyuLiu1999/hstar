@@ -3,7 +3,7 @@ env1:
     env_config:
         render_mode: vision
         prompt_format: free_think
-        data_path: /path/to/your/dataset
+        data_path: /root/GP/hstar/datasets/hos_train
         use_state_reward: false
         traj_success_reward: 0.5
         traj_fail_penalty: 0

@@ -9,6 +9,7 @@ class HstarEnvConfig(BaseEnvConfig):
     resolution: int = 1080  # Default resolution for the environment
     eval_set:str = "mixed"
     data_path:str = os.path.join(os.path.dirname(__file__), f"datasets/{eval_set}")
+    # data_path: str = '/root/GP/hstar/datasets/hos_train'
     seed:int = 42
     render_mode: str = "vision" 
     prompt_format: str = "free_think"  # "free_think", "no_think", "grounding"

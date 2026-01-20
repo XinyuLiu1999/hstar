@@ -1,7 +1,7 @@
 server_timeout: 600           
-server_max_workers: 64        
+server_max_workers: 4        
 
-batch_size: 32                
+batch_size: 8                
 split: "test"                 
 max_steps: 10                  
 debug: false                  

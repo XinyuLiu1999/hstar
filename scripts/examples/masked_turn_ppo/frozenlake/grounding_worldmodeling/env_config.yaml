@@ -1,8 +1,14 @@
 env1:
-    env_name: frozenlake  
+    env_name: hstar  
     env_config:
         render_mode: vision
-        prompt_format: grounding_worldmodeling
+        prompt_format: free_think
+        data_path: /root/GP/hstar/datasets/hos_train
         use_state_reward: false
-    train_size: 10000  
-    test_size: 128
+        traj_success_reward: 0.5
+        traj_fail_penalty: 0
+        format_reward: 0.5
+        resolution: 720
+
+    train_size: 3200  
+    test_size: 32

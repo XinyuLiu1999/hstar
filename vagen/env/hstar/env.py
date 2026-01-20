@@ -24,7 +24,7 @@ def calulate_distance_yaw(self, a, b):
 def calulate_distance_pitch(self, a, b):
     return abs(a - b)
 class HstarEnv(BaseEnv):
-    ValidEvalSets = ["object_search","navigation","mixed"]
+    ValidEvalSets = ["object_search","navigation","mixed", "hos_train"]
     
     ACTION_LOOKUP = {
         "rotate":1,
