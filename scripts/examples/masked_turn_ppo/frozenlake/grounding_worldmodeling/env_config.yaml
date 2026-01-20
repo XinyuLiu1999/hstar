@@ -2,6 +2,7 @@ env1:
     env_name: hstar  
     env_config:
         render_mode: vision
+        eval_set: hos_train
         prompt_format: free_think
         data_path: /root/GP/hstar/datasets/hos_train
         use_state_reward: false

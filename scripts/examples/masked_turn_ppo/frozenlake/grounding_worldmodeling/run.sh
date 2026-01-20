@@ -1,55 +1,81 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status
+set -e
 
-# Interactive input for port and CUDA devices
-# read -p "Enter port number (default: 5000): " PORT_INPUT
-# PORT=${PORT_INPUT:-5000}
+# Configuration
 PORT=5000
-# read -p "Enter CUDA devices (default: 0,1,2,3): " CUDA_DEVICES
-# CUDA_DEVICES=${CUDA_DEVICES:-0,1,2,3}
 CUDA_DEVICES=${CUDA_DEVICES:-0}
-# Get the directory of the script
+
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# Extract experiment name from the path
-# This will take the last 3 parts of the path: format/sokoban/free_think
 EXPERIMENT_NAME=$(echo $SCRIPT_DIR | rev | cut -d'/' -f1-3 | rev | tr '/' '-')
-EXPERIMENT_NAME="${EXPERIMENT_NAME}"
+
 echo "Experiment name: $EXPERIMENT_NAME"
-
-export NO_PROXY="localhost,127.0.0.1,::1"
-export no_proxy="localhost,127.0.0.1,::1"
-
 echo "Using port: $PORT"
 echo "Using CUDA devices: $CUDA_DEVICES"
 
-# Create directories if they don't exist
+# Set proxy bypass
+export NO_PROXY="localhost,127.0.0.1,::1"
+export no_proxy="localhost,127.0.0.1,::1"
+
+# Create directories
 mkdir -p "data/$EXPERIMENT_NAME"
+
+# Configure environment
 export WANDB_API_KEY=e4bb266d6e5a159a1280afa4a476720e92a6dbe7
-echo "WANDB API key: $WANDB_API_KEY"
-# Create server session
-# Configure server session with conda and environment variables
-source /root/miniconda3/etc/profile.d/conda.sh
-conda activate vagen
 export CUDA_VISIBLE_DEVICES=$CUDA_DEVICES
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export PYTHONHASHSEED=0
-# Start the server
+
+# Activate conda environment
+source /root/miniconda3/etc/profile.d/conda.sh || {
+    echo "ERROR: Failed to source conda"
+    exit 1
+}
+conda activate vagen || {
+    echo "ERROR: Failed to activate vagen environment"
+    exit 1
+}
+
+# Check if port is in use
+if lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null 2>&1; then
+    echo "WARNING: Port $PORT is already in use. Killing existing process..."
+    kill $(lsof -t -i:$PORT) 2>/dev/null || true
+    sleep 2
+fi
+
+# Start server
 cd $SCRIPT_DIR
-# python -m vagen.server.server server.port=$PORT &
-# python -m vagen.server.server server.port=$PORT hstar.max_workers=1 > server.log 2>&1 &
-# Wait for server to start
-echo "Waiting for server to start on port $PORT..."
-sleep 10  # Adjust as needed
+python -m vagen.server.server server.port=$PORT > server_$EXPERIMENT_NAME.log 2>&1 &
+SERVER_PID=$!
+echo "Server started with PID: $SERVER_PID"
+
+# Cleanup on exit
+trap "echo 'Cleaning up...'; kill $SERVER_PID 2>/dev/null || true" EXIT INT TERM
+
+# Wait for server to be ready
+echo "Waiting for server to start..."
+for i in {1..30}; do
+    if curl -s --noproxy localhost http://localhost:$PORT/ > /dev/null 2>&1; then
+        echo "✓ Server is ready!"
+        break
+    fi
+    if [ $i -eq 30 ]; then
+        echo "ERROR: Server failed to start within 60 seconds"
+        echo "Check server_$EXPERIMENT_NAME.log for details"
+        exit 1
+    fi
+    echo "Waiting... ($i/30)"
+    sleep 2
+done
 
 set -x
 
-# First create the dataset
+# Create dataset
 python -m vagen.env.create_dataset \
     --yaml_path "$SCRIPT_DIR/env_config.yaml" \
     --train_path "data/$EXPERIMENT_NAME/train.parquet" \
     --test_path "data/$EXPERIMENT_NAME/test.parquet"
+
 
 # Then start the training
 python3 -m vagen.trainer.main_ppo \
@@ -96,7 +122,7 @@ python3 -m vagen.trainer.main_ppo \
     critic.use_reward_mask=True \
     algorithm.kl_ctrl.kl_coef=0.001 \
     trainer.critic_warmup=0 \
-    trainer.logger=['console','wandb'] \
+    trainer.logger=['wandb', 'console'] \
     trainer.project_name='vagen_new' \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.n_gpus_per_node=1 \
@@ -111,7 +137,7 @@ python3 -m vagen.trainer.main_ppo \
     rollout_manager.use_gae_mask=True \
     trainer.val_before_train=True \
     trainer.val_generations_to_log_to_wandb=8 \
-    rollout_manager.n_trajectory=2 \
+    rollout_manager.n_trajectory=1 \
     rollout_manager.use_service=True \
     rollout_manager.timeout=300 \
     rollout_manager.base_url="http://localhost:$PORT" \
